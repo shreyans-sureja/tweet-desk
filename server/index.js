@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
 const tweetRoute = require('./routes/tweet');
+const accountRoute = require('./routes/twitterAccounts');
 
 
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(express.json());
 
 app.use('/api/user',authRoute);
 app.use('/api/tweet',tweetRoute);
+app.use('/api/account',accountRoute);
 
 
-app.listen(3000, ()=> console.log('server up and running!'));
+app.listen(8080, ()=> console.log('server up and running!'));

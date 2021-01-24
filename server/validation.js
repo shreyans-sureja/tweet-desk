@@ -22,5 +22,27 @@ const loginValidation = data =>{
 
 }
 
+const accountValidation = data =>{
+    const schema = Joi.object({
+        userId : Joi.string().min(1).required(),
+        token : Joi.string().min(5).required(),
+        token_secret : Joi.string().min(5).required(),
+    });
+    return schema.validate(data);
+
+}
+
+const tweetValidation = data =>{
+    
+    const schema = Joi.object({
+        handle : Joi.string().min(1).required(),
+        tweets : Joi.array(),
+    });
+    return schema.validate(data);
+
+}
+
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
+module.exports.accountValidation = accountValidation;
+module.exports.tweetValidation = tweetValidation;

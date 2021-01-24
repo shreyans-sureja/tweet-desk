@@ -1,0 +1,41 @@
+.sidebar {
+    background: #f7f6f3;
+    width: 100%;
+    min-width: 65px;
+    height: 100vh;
+    position: relative;
+  }
+  .sidebar-btns {
+    width: 100%;
+  }
+  .sidebar-btn {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    display: flex;
+  }
+  .sidebar-btn img {
+    width: 22px;
+    height: 22px;
+  }
+  .active {
+    background: #e8e7e4;
+  }
+  .sidebar-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
+  .sidebar-bottom-icon {
+    padding: 15px 0;
+    cursor: pointer;
+  }
+  .sidebar-profile {
+    padding: 15px 0 35px 0;
+  }
+  .sidebar-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }

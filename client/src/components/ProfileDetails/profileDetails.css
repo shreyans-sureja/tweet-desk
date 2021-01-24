@@ -1,0 +1,105 @@
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    width: 30%;
+    border-left: 1px solid #dbdbdb;
+    position: relative;
+  }
+  
+.cross-icon {
+    width: 12px;
+    height: 12px;
+    background: #f7f6f3;
+    padding: 5px;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin: 10px 20px;
+}
+  
+.profile-details-pic {
+    max-width: 80px;
+    border-radius: 50%;
+}
+  
+.profile-details-name {
+    padding-top: 10px;
+    font-size: 14px;
+    color: black;
+}
+  
+.profile-details-status {
+    font-size: 13px;
+    padding-top: 2px;
+    padding-bottom: 10px;
+  }
+
+.green {
+    color: green;
+}
+  
+.grey {
+    color: darkgrey;
+}
+  
+.profile-details-contact {
+    display: flex;
+    min-width: 170px;
+    font-size: 14px;
+    justify-content: space-between;
+}
+  
+.profile-details-call {
+    background: #f7f6f3;
+    border-radius: 10px;
+    padding: 4px 14px;
+    display: flex;
+    align-items: baseline;
+}
+  
+.profile-details-callIcon {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+  
+.profile-details-email {
+    background: #f7f6f3;
+    border-radius: 10px;
+    padding: 4px 13px;
+    display: flex;
+    align-items: baseline;
+}
+
+.profile-details-emailIcon {
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+}
+  
+.profile-details-table {
+    padding-top: 30px;
+    min-width: 240px;
+
+}
+  
+.profile-details-row {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+  
+.profile-details-row div:first-child {
+    color: grey;
+}
+  
+.profile-details-row div:last-child {
+    text-align: right;
+}
+  
+.default-profile {
+    width: 20px;
+    height: auto;
+    border-radius: 50%;
+  }

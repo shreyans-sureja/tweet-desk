@@ -1,0 +1,45 @@
+.conversations {
+  display: flex;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.conversations--left {
+  width: 5%;
+}
+.conversations--right {
+  width: 95%;
+  padding: 10px 80px;
+}
+.tweets {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+}
+.tweets--left {
+  width: 21%;
+  overflow-y: scroll;
+  height: 81vh;
+}
+.tweets--left::-webkit-scrollbar {
+  display: none;
+}
+
+.tweets-expired-header {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+.tweets-expired-header span {
+  background: #fff;
+  padding: 0 10px;
+}
+.tweets--right {
+  width: 79%;
+  margin-left: 30px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
