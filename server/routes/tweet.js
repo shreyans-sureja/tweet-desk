@@ -90,14 +90,23 @@ router.get('/filter',  (req,res) => {
 
 
 //user details
-router.get('/user', (req,res) =>{
-    var user = {screen_name: req.body.handle};
-      
-    console.log(user)
+router.get('/profile/:handle', (req,res) =>{
+    var user = {screen_name: req.params.handle};
+
     client.get('users/show', user, (err, data, response) => {
         if(err)   return res.status(400).send(data);
         
-        return res.send(data);
+        let profile = {
+            id_str : data.id_str,
+            name : data.name,
+            screen_name : data.screen_name,
+            followers_count : data.followers_count,
+            friends_count : data.friends_count,
+            profile_image_url : data.profile_image_url,
+        }
+        
+          
+        return res.send(profile);
     });
 })
 

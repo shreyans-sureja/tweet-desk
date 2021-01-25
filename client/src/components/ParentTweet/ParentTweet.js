@@ -21,7 +21,7 @@ const ParentTweet = () => {
           <div className="tweetbox-header-msgCount">2 </div>
         </div>
 
-        <div className="tweetbox-msg">Modiji aapne intne chamche khase laye?</div>
+        <div className="tweetbox-msg">This is main parent tweets thread.</div>
       </div>
     </section>
   );

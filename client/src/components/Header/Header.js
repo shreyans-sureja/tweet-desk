@@ -1,14 +1,9 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import "./header.css";
 
-
-
 const Header = () => {
-
-  const user = useSelector(state => state.security.user)
-
-  console.log(user);
+  const user = useSelector((state) => state.security.user);
 
   return (
     <main className="header d-flex justify-content-between p-2">

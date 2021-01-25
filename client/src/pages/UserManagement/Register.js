@@ -19,21 +19,26 @@ class Register extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.security.validToken) {
-      this.props.history.push("/conversations");
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.security.validToken) {
+  //     this.props.history.push("/conversations");
+  //   }
+  // }
 
   onSubmit(e) {
     e.preventDefault();
     const newUser = {
       email: this.state.username,
-      name : this.state.fullname,
+      name: this.state.fullname,
       password: this.state.password,
     };
 
     this.props.createNewUser(newUser, this.props.history);
+    
+    this.setState({username : ""})
+    this.setState({fullname : ""})
+    this.setState({password : ""})
+    this.setState({confirmpassword : ""})
   }
 
   componentWillReceiveProps(nextProps) {

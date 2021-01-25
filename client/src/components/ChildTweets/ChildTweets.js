@@ -15,10 +15,7 @@ const ChildTweets = () => {
         <div className="childtweets-body-header">10: 00</div>
         <Tweets />
 
-        <div className="childtweets-body-assigned">
-
-         
-        </div>
+        <div className="childtweets-body-assigned"></div>
 
         {/* loop tweets* */}
       </section>

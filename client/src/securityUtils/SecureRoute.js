@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
 const SecuredRoute = ({ component: Component, security, ...otherProps }) => (
+
     <Route
       {...otherProps}
       render={props =>

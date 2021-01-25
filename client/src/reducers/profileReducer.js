@@ -1,8 +1,7 @@
-import {SET_CURRENT_USER} from "../actions/types";
+import {SET_CURRENT_PROFILE} from "../actions/types";
 
 const initialState = {
-    user: {},
-    validToken : false,
+    profile: {},
 }
 
 const booleanActionPayload = (payload) => {
@@ -17,12 +16,12 @@ const booleanActionPayload = (payload) => {
 export default function(state = initialState, action){
 
     switch(action.type){
-        case SET_CURRENT_USER:
+        case SET_CURRENT_PROFILE:
 
         return{
             ...state,
-            validToken: booleanActionPayload(action.payload.token),
-            user: action.payload,
+            validToken: booleanActionPayload(action.payload),
+            profile : action.payload
         }
         
         default:
