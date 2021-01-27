@@ -29,15 +29,15 @@ const ProfileDetails = () => {
       <section className="profile-details-table">
         <div className="profile-details-row">
           <div>Followers</div>
-          <div>{profile.followers_count}</div>
+          <div>15</div>
         </div>
         <div className="profile-details-row">
           <div>Following</div>
-          <div>{profile.friends_count}</div>
+          <div>40</div>
         </div>
         <div className="profile-details-row">
           <div>Username</div>
-          <div>{profile.screen_name}</div>
+          <div>Shreyans</div>
         </div>
       </section>
     </section>

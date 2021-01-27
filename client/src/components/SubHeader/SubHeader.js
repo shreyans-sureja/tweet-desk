@@ -8,8 +8,7 @@ const SubHeader = () => {
     <main className="subheader">
       <section className="subheader--left">
         <div className="subheader-text">Conversations</div>
-        <div className="subheader-searchbox">
-        </div>
+        <div className="subheader-searchbox"></div>
         <div className="subheader-filter">
           <img src={filter} alt="filter-icon" className="filter-icon" />
           <div className="subheader-filter-text">Filter</div>

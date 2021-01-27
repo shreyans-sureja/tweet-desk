@@ -8,9 +8,7 @@ const Tweets = (props) => {
       <img src={users} alt="Profile" className="profile-pic" />
       <div className="childtweetmsg--right">
         <div className="childtweetmsg-header">
-          <div className="childtweetmsg-greet">
-              demo tweet
-          </div>
+          <div className="childtweetmsg-greet">demo tweet</div>
           <div className="childtweetmsg-time">10 : 00</div>
         </div>
       </div>

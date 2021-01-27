@@ -1,31 +1,27 @@
-import {SET_CURRENT_PROFILE} from "../actions/types";
+import { SET_CURRENT_PROFILE } from "../actions/types";
 
 const initialState = {
-    profile: {},
-}
+  profile: {},
+};
 
 const booleanActionPayload = (payload) => {
-    if(payload){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
+  if (payload) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
-export default function(state = initialState, action){
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case SET_CURRENT_PROFILE:
+      return {
+        ...state,
+        validToken: booleanActionPayload(action.payload),
+        profile: action.payload,
+      };
 
-    switch(action.type){
-        case SET_CURRENT_PROFILE:
-
-        return{
-            ...state,
-            validToken: booleanActionPayload(action.payload),
-            profile : action.payload
-        }
-        
-        default:
-            return state
-    }
-    
+    default:
+      return state;
+  }
 }

@@ -34,11 +34,11 @@ class Register extends Component {
     };
 
     this.props.createNewUser(newUser, this.props.history);
-    
-    this.setState({username : ""})
-    this.setState({fullname : ""})
-    this.setState({password : ""})
-    this.setState({confirmpassword : ""})
+
+    this.setState({ username: "" });
+    this.setState({ fullname: "" });
+    this.setState({ password: "" });
+    this.setState({ confirmpassword: "" });
   }
 
   componentWillReceiveProps(nextProps) {

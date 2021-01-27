@@ -1,62 +1,51 @@
-const router = require('express').Router();
-const User = require('../model/User');
-const jwt = require('jsonwebtoken');
-const {registerValidation, loginValidation} = require('../validation');
-const bcrypt = require('bcryptjs');
+const router = require("express").Router();
+const User = require("../model/User");
+const jwt = require("jsonwebtoken");
+const { registerValidation, loginValidation } = require("../validation");
+const bcrypt = require("bcryptjs");
 
- 
-router.post('/register', async (req, res) => {
+router.post("/register", async (req, res) => {
+  const { error } = registerValidation(req.body);
 
-    const {error} = registerValidation(req.body);
-     
-    if(error) 
-        return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).send(error.details[0].message);
 
+  const emailExist = await User.findOne({ email: req.body.email });
 
-    const emailExist = await User.findOne({email : req.body.email});
+  if (emailExist) return res.status(400).send("Email already exists!");
 
-    if(emailExist) 
-        return res.status(400).send('Email already exists!');
+  const salt = await bcrypt.genSalt(10);
+  const hashPassword = await bcrypt.hash(req.body.password, salt);
 
-    const salt = await bcrypt.genSalt(10);
-    const hashPassword = await bcrypt.hash(req.body.password, salt);
- 
-    const user = new User({
-        name : req.body.name,
-        email : req.body.email,
-        password : hashPassword,
-    })
+  const user = new User({
+    name: req.body.name,
+    email: req.body.email,
+    password: hashPassword,
+  });
 
-    try{
-        const saveUser = await user.save();
-        res.send({user : user._id});
-    }
-    catch(err){
-        res.status(400).send(err);
-    }
-})
+  try {
+    const saveUser = await user.save();
+    res.send({ user: user._id });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
 
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
+  const { error } = loginValidation(req.body);
 
-    const {error} = loginValidation(req.body);
-     
-    if(error) 
-        return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).send(error.details[0].message);
 
+  const user = await User.findOne({ email: req.body.email });
 
-    const user = await User.findOne({email : req.body.email});
+  if (!user) return res.status(400).send("Email or Password is wrong!");
 
-    if(!user) 
-        return res.status(400).send('Email or Password is wrong!');
+  const validPassword = await bcrypt.compare(req.body.password, user.password);
 
-    const validPassword = await bcrypt.compare(req.body.password, user.password);
+  if (!validPassword)
+    return res.status(400).send("Email or Password is wrong!");
 
-    if(!validPassword)
-        return res.status(400).send('Email or Password is wrong!');
-
-    const token = jwt.sign({_id : user._id}, process.env.TOKEN_SECRET);
-    res.header('auth-token', token).send({token : token, name : user.name})
-
-})
+  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+  res.header("auth-token", token).send({ token: token, name: user.name });
+});
 
 module.exports = router;

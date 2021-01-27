@@ -26,21 +26,16 @@ export const login = (LoginRequest) => async (dispatch) => {
       "http://127.0.0.1:8080/api/user/login",
       LoginRequest
     );
-    console.log("login", res);
     const token = res.data.token;
     localStorage.setItem("jwtToken", token);
     setJWTToken(token);
 
     const decoded = jwt_decode(token);
 
-    console.log("deconded", decoded._id);
-
     const pyload = {
       token: decoded._id,
       user: res.data.name,
     };
-
-    console.log("payyyload", pyload);
 
     dispatch({
       type: SET_CURRENT_USER,

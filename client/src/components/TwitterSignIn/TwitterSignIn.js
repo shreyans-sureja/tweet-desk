@@ -14,7 +14,6 @@ const TwitterSignIn = () => {
         .get("http://127.0.0.1:8080/api/twitter/connect")
 
         .then((response) => {
-          console.log("ee", response.data);
           let oauthToken = response.data.oauthToken;
           let oauthTokenSecret = response.data.oauthTokenSecret;
           localStorage.setItem("oauthTokenSecret", oauthTokenSecret);

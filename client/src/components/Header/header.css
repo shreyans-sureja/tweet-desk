@@ -1,16 +1,15 @@
-
 .header {
-    flex: 1;
-    color: #a5a5a5;
-  }
-  .header--left {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #a5a5a5;
-    margin-left: 50px;
-  }
-  .header--right {
-    color: #878787;
-  }
-  .header-user {
-    padding-left: 50px;
-  }
+  flex: 1;
+  color: #a5a5a5;
+}
+.header--left {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #a5a5a5;
+  margin-left: 50px;
+}
+.header--right {
+  color: #878787;
+}
+.header-user {
+  padding-left: 50px;
+}

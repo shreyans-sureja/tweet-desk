@@ -36,9 +36,7 @@ const Sidebar = () => {
         <div className="sidebar-bottom-icon">
           <img src={record} alt="record-icon" id="record-icon" title="Logout" />
         </div>
-        <div className="sidebar-profile">
-          {/*                    <img :src="currUser?.profile_image_url" alt="icon" /> */}
-        </div>
+        <div className="sidebar-profile"></div>
       </section>
     </main>
   );

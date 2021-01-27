@@ -9,18 +9,10 @@ import "./Conversation.css";
 import { SET_CURRENT_USER, SET_CURRENT_PROFILE } from "../actions/types";
 import { connect } from "react-redux";
 import axios from "axios";
-import { twitterSignInAction } from "../actions/twitterActions";
 
 const signInInfo = (pyload) => async (dispatch) => {
   dispatch({
     type: SET_CURRENT_USER,
-    payload: pyload,
-  });
-};
-
-let profileInfo = (pyload) => (dispatch) => {
-  dispatch({
-    type: SET_CURRENT_PROFILE,
     payload: pyload,
   });
 };
@@ -40,8 +32,6 @@ class Conversations extends Component {
     };
 
     this.props.signInInfo(pyload);
-
-    console.log(oauth_verifier);
     const oauthRequestTokenSecret = localStorage.getItem("oauthTokenSecret");
 
     let obj = {
@@ -56,13 +46,6 @@ class Conversations extends Component {
         obj
       );
 
-      console.log(response.data);
-
-      let pyload = {
-        profile: response.data,
-      };
-
-      // this.props.profileInfo(pyload)
       localStorage.setItem("handle", response.data);
     } catch (err) {}
   }

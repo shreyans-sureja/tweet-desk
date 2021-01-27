@@ -19,17 +19,17 @@ import TwitterSignIn from "./components/TwitterSignIn/TwitterSignIn";
 // if (jwtToken) {
 //   setJWTToken(jwtToken);
 
-  // const decoded_jwtToken = jwt_decode(jwtToken);
-  // store.dispatch({
-  //   type: SET_CURRENT_USER,
-  //   payload: decoded_jwtToken,
-  // });
+// const decoded_jwtToken = jwt_decode(jwtToken);
+// store.dispatch({
+//   type: SET_CURRENT_USER,
+//   payload: decoded_jwtToken,
+// });
 
-  // const currentTime = Date.now() / 1000;
-  // if (decoded_jwtToken.exp < currentTime) {
-  //   store.dispatch(logout());
-  //   window.location.href = "/";
-  // }
+// const currentTime = Date.now() / 1000;
+// if (decoded_jwtToken.exp < currentTime) {
+//   store.dispatch(logout());
+//   window.location.href = "/";
+// }
 // }
 // else{
 //   window.location.href = "/"
@@ -43,12 +43,10 @@ function App() {
           {/*<Route exact path="/" component={Login} />
           <Route exact path="/register" component={Register} />}
           <Route exact path="/twitter/signin" component={TwitterSignIn} />
-  */}          <Route exact path="/" component={TwitterSignIn} />
-
-          <Route exact
-          path="/conversations"
-          component={Conversations} />
-         {/*  <Switch>
+  */}{" "}
+          <Route exact path="/" component={TwitterSignIn} />
+          <Route exact path="/conversations" component={Conversations} />
+          {/*  <Switch>
             <SecuredRoute
               exact
               path="/conversations"
